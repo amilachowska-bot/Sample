@@ -11,6 +11,7 @@ public class Movement : MonoBehaviour
     public float jumpStrength = 500;
 
     public float moveSpeed = 300;
+    public float rotateSpeed = 100;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,7 +33,7 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.Rotate(Vector3.up, direction.x * 500 * Time.fixedDeltaTime);
+        transform.Rotate(Vector3.up, direction.x * rotateSpeed * Time.fixedDeltaTime);
         
         rb.linearVelocity = new Vector3(transform.right.x * direction.y * moveSpeed, rb.linearVelocity.y, transform.right.z * direction.y * moveSpeed);
     }
